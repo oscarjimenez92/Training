@@ -1,0 +1,17 @@
+@import '../conf/vars.css';
+
+body{
+    background: var(--grey_body);
+}
+.main{
+    color: red;
+}
+.main > .navbar{
+    background: var(--white);
+    height: 66px;
+    position: fixed;
+}
+.navbar > ul{
+    display: flex;
+    flex-direction: row;
+}  
