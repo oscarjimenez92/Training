@@ -133,13 +133,13 @@ body{
     font-size: 10px;
 
 }
-.top-news{
+#top-news{
     width: 100%;
     justify-content: center;
     align-items: center;
     margin: 0 0 40px 0;
 }
-.top-news > .title-top-news > h1{
+#top-news > .title-top-news > h1{
     font-size: 30px;
     margin: 0;
     letter-spacing: 0.8px;
@@ -148,20 +148,15 @@ body{
 
 #top-news-dinamic{
     background-color: var(--white);
+    padding: 20px;
     display: grid;
     grid-template-columns: 45% 45%;
+    grid-row-gap: 100px;
     grid-column-gap: 10%;
-    padding: 20px;
-    /*display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 41px 29px;
-    flex-wrap: wrap;*/
+    padding: 20px 20px 40px 20px;
 }
 #top-news-dinamic > .container-card-new{
-    margin-bottom: 130px;
     grid-template-rows: 500px;
-    /*width: 48%;*/
     overflow: hidden;
 }
 #top-news-dinamic > .container-card-new > .container-img{
@@ -191,6 +186,26 @@ body{
     max-height: 100px;
     height: auto;
 }
+.container-news-button{
+    justify-content: center;
+    display: flex;
+    margin: 35px;
+}
+
+.container-news-button > button{
+    border: none;
+    background: var(--dark-blue);
+    color: var(--color-text-list);
+    padding: 10px 25px;
+    cursor: pointer;
+    color: var(--white);
+    border-radius: 4px;
+}
+.container-news-button > button:hover{
+    background: #0f86ff;
+}
+
+
 /*MOVILES*/
 @media only screen and (max-width: 500px) {
     body{
@@ -203,14 +218,14 @@ body{
         width: 100%;
         min-width: 100%;
     }
-    #top-news-dinamic > .container-card-new > .container-img{
+    .top-news-dinamic > .container-card-new > .container-img{
         max-height: 200px;
         height: 200px;
     }
-    #top-news-dinamic{
+    .top-news-dinamic{
         grid-template-columns: 100%;
     }
-    #top-news-dinamic > .container-card-new{
+    .top-news-dinamic > .container-card-new{
         width: 100%;
         min-height: 300px;
     }
