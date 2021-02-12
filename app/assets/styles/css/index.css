@@ -6,6 +6,9 @@ body{
     font-family: "Open Sans";
 
 }
+.main{
+    margin-top: 80px;
+}
 .loader{
     position: fixed;
     z-index: 1;
@@ -26,16 +29,14 @@ body{
     background: var(--white);
     height: 66px;
     width: 100%;
+    top: 0;
     box-shadow: 0 2px 2px 0 rgba(0,0,0,0.18);
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-}
-.navbar-fixed{
     position: fixed;
-    z-index: 1;
-    opacity: 0.98;
+    z-index: 2;
 }
 
 
@@ -45,35 +46,36 @@ body{
     align-items: center;
     width: 70%;
 }
-.container-items > .logo{
+.container-items .logo{
     margin-right: 45px;
 }
-.navbar > .container-items > .navbar-item{
-    min-width: 62px;
+.navbar .navbar-item{
+    /*min-width: 62px;*/
     cursor: pointer;
     height: 100%;
     margin-right: 25px;
     align-items: center;
     text-align: center;
 }
-.navbar > .container-items > .navbar-item:lastchild{
+.navbar .navbar-item:lastchild{
     margin: 0 auto;
 }
 
-.navbar > .container-items > .navbar-item  > a{
-    text-decoration: none;color: var(--color-text-list);
+.navbar .navbar-item a{
+    text-decoration: none;
+    color: var(--color-text-list);
     letter-spacing: -0.09px;
     font-size: 16px;
     white-space: nowrap;
 }
-.navbar > .container-items > .navbar-item:hover{
+.navbar .navbar-item:hover{
     background: var(--grey_body);
 }
-.navbar > .container-items > .navbar-item:last-child{
+.navbar .navbar-item:last-child{
     margin-right: 0;
     margin-left: auto;
 }
-.navbar > .container-items > .navbar-item > .logo-js{
+.navbar .navbar-item .logo-js{
     height: 22px;
     width: 22px;
     background: var(--purple);
@@ -84,7 +86,7 @@ body{
     float: right;
 }
 
-.navbar > .container-items > .navbar-item > .logo-js > a{
+.navbar .logo-js a{
     vertical-align: middle;
 }
 
@@ -141,17 +143,17 @@ body{
     font-size: 16px;
     margin: 30px 0 0 0;
 }
-.container-alert > div > p{
+.container-alert p{
     color: var(--color-text-list);
     opacity: 0.6;
     margin: 0;
 }
-.container-alert > .container-button-close{
+.container-alert .container-button-close{
     margin-left: auto;
     cursor: pointer;
     opacity: 0.5;
 }
-.container-alert > .container-button-close > div{
+.container-alert .container-button-close div{
     height: 20px;
     width: 20px;
     border-radius: 50px;
@@ -162,13 +164,13 @@ body{
 
 }
 
-.container-general-news > .top-news{
+.container-general-news .top-news{
     width: 100%;
     justify-content: center;
     align-items: center;
     margin: 30px 0 40px 0;
 }
-.top-news > .title-top-news > h1{
+.top-news h1{
     font-size: 30px;
     margin: 0;
     letter-spacing: 0.8px;
@@ -184,41 +186,42 @@ body{
     grid-column-gap: 10%;
     padding: 20px 20px 40px 20px;
 }
-#top-news-dinamic > .container-card-new{
+#top-news-dinamic .container-card-new{
     grid-template-rows: 500px;
     overflow: hidden;
 }
-#top-news-dinamic > .container-card-new > .container-img{
+#top-news-dinamic .container-img{
     height: 250px;
     width: 100%;
     cursor: pointer;
 }
-#top-news-dinamic > .container-card-new > .container-img:hover{
+#top-news-dinamic .container-img:hover{
     opacity: 0.8;
 }
-#top-news-dinamic > .container-card-new > .container-img > img{
+
+#top-news-dinamic img{
     height: 100%;
     width: 100%;
     object-fit: cover;
 }
-#top-news-dinamic > .container-card-new > .text-one, .text-two{
+#top-news-dinamic .text-one, .text-two{
     overflow: hidden;
     color: var(--color-text-list);
     text-align: left;
     margin-top: 20px;
 }
-#top-news-dinamic > .container-card-new > .text-one{
+#top-news-dinamic .text-one{
     font-size: 20px;
     max-height: 110px;
     font-weight: 600;
 }
-#top-news-dinamic > .container-card-new > .text-two{
+#top-news-dinamic .text-two{
     font-size: 16px;
     max-height: 90px;
     height: auto;
 }
 
-#top-news-dinamic > .container-card-new > .text-two > span{
+#top-news-dinamic span{
     background: linear-gradient(to right bottom, #000, #fff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -231,7 +234,7 @@ body{
     margin: 35px;
 }
 
-.container-news-button > button{
+.container-news-button button{
     border: none;
     background: var(--dark-blue);
     color: var(--color-text-list);
@@ -240,7 +243,7 @@ body{
     color: var(--white);
     border-radius: 4px;
 }
-.container-news-button > button:hover{
+.container-news-button button:hover{
     background: #0f86ff;
 }
 
@@ -249,10 +252,10 @@ body{
     position: relative;
     display: flex;
 }
-.container-subscribe > img{
+.container-subscribe img{
     width: 100%;
 }
-.container-subscribe > .container-text-subscribe{
+.container-subscribe .container-text-subscribe{
     width: 60%;
     display: flex;
     flex-direction: column;
@@ -261,25 +264,25 @@ body{
     justify-content: center;
     position: absolute;
 }
-.container-subscribe > .container-text-subscribe > .items-subscribe{
+.container-subscribe .items-subscribe{
     width: 380px;
     margin: 0 auto;
 }
-.container-subscribe > .container-text-subscribe > .items-subscribe > .text-subscribe {
+.container-subscribe .text-subscribe {
     margin-bottom: 25px;
 }
-.container-subscribe > .container-text-subscribe > .items-subscribe > .text-subscribe > span{
+.container-subscribe .text-subscribe span{
     margin: 0;
     font-size: 25px;
     letter-spacing: 1px;
     font-family: "Open Sans";
 }
 
-.container-subscribe > .container-text-subscribe > .items-subscribe > .container-button-subscribe{
+.container-subscribe .container-button-subscribe{
     margin-top: 40px;
 }
 
-.container-subscribe > .container-text-subscribe > .items-subscribe > .container-button-subscribe > button{
+.container-subscribe button{
     border: 1px solid #fff;
     background: transparent;
     color: #fff;
@@ -293,33 +296,33 @@ body{
     margin: 0 auto;
     flex-direction: column;
 }
-.footer-contact-us > .contact-us{
+.footer-contact-us .contact-us{
     text-align: center;
     margin: 66px 0 23px 0;
     font-size: 30px
 }
-.footer-contact-us > form >.container-form{
+.footer-contact-us .container-form{
     background: #fff;
     padding: 35px;
     margin-bottom: 106px;
 }
-.footer-contact-us > form >.container-form > .row-form{
+.footer-contact-us .row-form{
     display: grid;
     grid-template-columns: repeat(2, 51%);
     justify-content: space-between;
     grid-template-rows: 90px;
 }
-.footer-contact-us > form >.container-form > .row-form-full{
+.footer-contact-us .row-form-full{
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: 90px;
 }
-.footer-contact-us > form >.container-form > .row-form, .row-form-full > div > label{
+.footer-contact-us .row-form, .row-form-full label{
     color: var(--grey-1);
     font-size: 13px;
 }
  
-.footer-contact-us > form >.container-form > .row-form > div > input, textarea{
+.footer-contact-us .row-form input, .row-form-full textarea{
     width: 95%;
     height: 35px;
     border: 1px solid var(--grey-border-inputs);
@@ -327,16 +330,16 @@ body{
     border-radius: 3px;
     box-sizing: border-box;
 }
-.footer-contact-us > form >.container-form > .row-form-full > div > textarea{
+.footer-contact-us .row-form-full textarea{
     width: 100%;
     height: 88px;
 }
 
-.footer-contact-us > form >.container-form > .container-checkbox{
+.footer-contact-us .container-form .container-checkbox{
     display: flex;
     margin: 46px 0 66px 0;
 }
-.footer-contact-us > form >.container-form > .container-checkbox > div > span{
+.footer-contact-us .container-checkbox span{
     margin-left: 15px;
 }
 .container-button-submit{
@@ -345,7 +348,7 @@ body{
     margin-bottom: 40px;
     align-items: center;
 }
-.container-button-submit > button{
+.container-button-submit button{
     border: none;
     background-color: var(--dark-blue);
     cursor: pointer;
@@ -353,7 +356,7 @@ body{
     height: 40px;
     color:var(--white);
 }
-.container-button-submit > button:hover{
+.container-button-submit button:hover{
     background-color: #0073e9c7;
 }
 
@@ -369,10 +372,10 @@ button{
     position: relative;
   }
 
-.modal-contenido > .modal-body{
+.modal-contenido .modal-body{
     padding: 20px;
 }
-.modal-contenido > .modal-header{
+.modal-contenido .modal-header{
     display: flex;
     align-items: center;
     padding: 10px;
@@ -381,26 +384,26 @@ button{
     border-top-right-radius: 5px;
 }
 
-.modal-contenido > .modal-header > div > h2{
+.modal-contenido h2{
     margin: 0;
     color: var(--white);
 }
 
-.modal-contenido > .modal-header > .button-close{
+.modal-contenido .button-close{
     font-size: 14px;
     color: var(--grey-1);
     margin-left: auto;
 }
-.modal-contenido > .modal-header > .button-close > a{
+.modal-contenido .button-close a{
     text-decoration: none;
 }
-.modal-contenido > .modal-footer{
+.modal-contenido .modal-footer{
     padding: 15px;
     display: flex;
     justify-content: flex-end;
     border-top: 1px solid var(--grey-footer);
 }
-.modal-contenido > .modal-footer > div > a{
+.modal-contenido .modal-footer a{
     cursor: pointer;
     text-decoration: none;
     border-radius: 3px;
@@ -411,17 +414,17 @@ button{
     padding: 5px 20px;
     color: var(--white);
 }
-.modal-contenido > .modal-footer > div > a:hover{
+.modal-contenido .modal-footer a:hover{
     background-color: var(--blue-hover-button-footer);
 }
-.modal-body > #messageModal{
+.modal-body #messageModal{
     margin: 0;
 }
-.modal-body > #messageModal > div{
+.modal-body #messageModal div{
     display: flex;
     justify-content: space-between;
 }
-.modal-body > #messageModal > div > span:last-child{
+.modal-body #messageModal div span:last-child{
     color: var(--grey-1);
     opacity: 0.6;
     font-weight: bold;
@@ -432,7 +435,7 @@ button{
     text-align: right;
     cursor: pointer;
 }
-.modal-body > #messageModal > div > h4{
+.modal-body #messageModal h4{
     color: var(--green);
     font-weight: 700;
     font-size: 18px;
@@ -460,8 +463,8 @@ button{
 
 /*PC*/
 @media only screen and (max-width: 900px) and (max-width: 700px){
-    .container-subscribe > .container-text-subscribe{
-        width: 95%;
+    .container-subscribe .container-text-subscribe{
+        width: 90%;
     }
 
 }
@@ -482,60 +485,64 @@ button{
         width: 100%;
         min-width: 100%;
     }
-    #top-news-dinamic > .container-card-new > .container-img{
+    #top-news-dinamic .container-img{
         max-height: 200px;
         height: 200px;
     }
     #top-news-dinamic{
         grid-template-columns: 100%;
     }
-    #top-news-dinamic > .container-card-new{
+    #top-news-dinamic .container-card-new{
         width: 100%;
         min-height: 300px;
     }
-    .container-subscribe > .container-text-subscribe{
+    .container-subscribe .container-text-subscribe{
         width: 100%;
     }
-    .container-subscribe > .container-text-subscribe > .items-subscribe{
+    .container-subscribe .items-subscribe{
         margin: 0 auto;
     }
     .footer-contact-us{
         width: 90%;
     }
-    .footer-contact-us > form >.container-form > .row-form{
+    .footer-contact-us .row-form{
         grid-template-columns: 100%;
         grid-template-rows: none;
     }
-    .footer-contact-us > form >.container-form > .row-form > div{
+    .footer-contact-us .row-form > div{
         margin-bottom: 15px;
     }
-    .footer-contact-us > form >.container-form > .row-form > div > input, textarea{
+    .footer-contact-us .row-form input, .row-form-full textarea{
         font-size: 16px;
         height: 50px;
     }
-    .footer-contact-us > form >.container-form > .row-form, .row-form-full > div > label{
+    .footer-contact-us .row-form, .row-form-full label{
         font-size: 18px;
+    }
+    .container-items .logo:first-child{
+        margin-right: 5px;
     }
 
   }
+
 
   @media only screen and (max-width: 300px){
     button{
         font-size: 20px;
     }
-    .footer-contact-us > form >.container-form > .row-form, .row-form-full > div > label{
+    .footer-contact-us .container-form label{
         font-size: 25px;
     }
-    .footer-contact-us > form >.container-form > .row-form > div > input, textarea{
+    .footer-contact-us input, textarea{
         font-size: 20px;
         height: 50px;
     }
 
-    .footer-contact-us > form >.container-form > .container-checkbox > div > span{
+    .footer-contact-us .container-checkbox span{
         font-size: 20px;
     }
-    
+    .navbar .logo-js{
+        display: none;
+    }
+
 }
-
-
-

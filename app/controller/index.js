@@ -165,7 +165,7 @@ window.addEventListener('load', () => {
                  */
                 countItemsDropdown++
                 let item = document.createElement('a')
-                    item.setAttribute("href", `#target_${i+1}`)
+                    item.setAttribute("href", `#target_${countItemsDropdown}`)
                     item.setAttribute("target", "_self")
                         let text_item = document.createTextNode(`Noticia #${countItemsDropdown}`)
                         let icon = document.createElement('i')
@@ -179,7 +179,7 @@ window.addEventListener('load', () => {
                  */
                 let parent_card = document.createElement('div')
                     parent_card.setAttribute("class", "container-card-new")
-                    parent_card.setAttribute("id", `target_${i+1}`)
+                    parent_card.setAttribute("id", `target_${countItemsDropdown}`)
                         let container_img = document.createElement('div')
                             container_img.setAttribute("class", "container-img")
                             container_img.setAttribute("title", "Abrir noticia en una nueva pestaña")
@@ -249,16 +249,6 @@ window.addEventListener('load', () => {
     const returnRandomImg = (array) => {
         return array[Math.floor(Math.random() * array.length)].url;
     }
-
-    const activateFixedNavBar = () => {
-        window.addEventListener('scroll', (evt) => {
-            if(window.scrollY < 70 && screen.width > 500 || window.scrollY < 20 && screen.width < 500){
-                document.getElementById('navbar').classList.remove('navbar-fixed')
-            }else if(window.scrollY > 20 && screen.width < 500 || window.scrollY > 70 && screen.width > 500){
-                document.getElementById('navbar').classList.add('navbar-fixed')
-            }
-        }, false);
-    }
     
     const initialicingButtonMoreNews = () => {
         const buttonMore = document.getElementById('buttonMore')
@@ -284,7 +274,7 @@ window.addEventListener('load', () => {
                 renderNewsitems(arr_data.slice(currentItems, itemsPerSection))
             }
         })
-        //activateFixedNavBar()
+
         initialicingButtonMoreNews()
     }
 
