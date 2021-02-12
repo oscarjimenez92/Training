@@ -246,6 +246,10 @@ window.addEventListener('load', () => {
         }
     }
 
+    /**
+     * Return a random image from the array
+     * @param {array of images} array 
+     */
     const returnRandomImg = (array) => {
         return array[Math.floor(Math.random() * array.length)].url;
     }
@@ -264,7 +268,7 @@ window.addEventListener('load', () => {
     }
 
     /**
-     * Initializing all functions app
+     * Initializing app functions
      */
     const init = () =>{
         getData().then(response => {

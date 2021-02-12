@@ -48,7 +48,14 @@ body{
 }
 .container-items .logo{
     margin-right: 45px;
+    height: 55px;
+    width: 55px;
 }
+.container-items img{
+    height: 55px;
+    width: 55px;
+}
+
 .navbar .navbar-item{
     /*min-width: 62px;*/
     cursor: pointer;
@@ -283,6 +290,7 @@ body{
 }
 
 .container-subscribe button{
+    cursor: pointer;
     border: 1px solid #fff;
     background: transparent;
     color: #fff;
