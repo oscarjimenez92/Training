@@ -1,0 +1,357 @@
+/*
+    FILES SASS
+*/
+@import  './components/mixin';
+@import './components/functions';
+/**
+    VARS
+*/
+$font_default: "Open Sans";
+$font-size: 14px;
+
+body{
+    @include body(getMapColor(--grey_body), $font_default);
+}
+.navbar{
+    @include navbar(getMapColor(--white)); 
+    .navbar-item{
+        cursor: pointer;
+        @include heightAndWidth(100%, "");
+        margin-right: 25px;
+        align-items: center; 
+        text-align: center;
+        &:hover{
+            background: getMapColor(--grey_body);
+        }
+    }
+    .navbar-item {
+        &:last-of-type{
+            margin-left: auto;
+            margin-right: 0;
+        }
+        a{
+            text-decoration: none; 
+            color: getMapColor(--color-text-list);
+            letter-spacing: -0.09px;
+            font-size: 16px;
+            white-space: nowrap;
+        }
+        .logo-js{
+            @include heightAndWidth(22px, 22px);
+            background: getMapColor(--purple);
+            padding: 2px;
+            border-radius: 50px;
+            color: getMapColor(--white);
+            font-size: $font-size;
+            float: right;
+            a{
+                vertical-align: middle;
+            }
+        }
+    }
+    .drop{
+        font-size: 16px;
+        border: none;
+    }
+    .drop:after{
+        content: '\25BC'; 
+        font-size: 13px;
+        margin-left: 5px;
+        color: getMapColor(--color-text-list);
+    }
+    .dropdown{
+        position: relative;
+        display: inline-block;
+        &:hover{
+            .dropdown-content{ 
+                display: block;
+            }
+        }
+    }
+    .dropdown-content{
+        @include dropdown(getMapColor(--dropdown-color-back), getMapColor(--color-text-list), getMapColor(--dark-blue), getMapColor(--white))
+    }
+}
+.container-items{
+    @include container-items(70%);
+    .logo{
+        margin-right: 45px;
+        @include heightAndWidth(55px, 55px)
+    }
+    img{
+        @include heightAndWidth(55px, 55px)
+    }
+}
+.main{
+    margin-top: 80px;
+    .loader{
+        @include loader(getMapColor(--white));
+        img{
+            opacity: 0.9;
+            display: block;
+            margin: 0 auto; 
+        }
+    }
+}
+.container-general-news{
+    @include container-general-news(70%);
+    .top-news{
+        @include heightAndWidth("", 100%);
+        margin: 30px 0 40px 0;
+        h1{
+            font-size: 30px;
+            margin: 0;
+            letter-spacing: 0.8px;
+            color: getMapColor(--color-text-list);
+        }
+    }
+    .container-alert{
+        @include container-alert(getMapColor(--light-blue), getMapColor(--color-text-list), getMapColor(--grey-2), getMapColor(--white));
+    }
+}
+#top-news-dinamic{
+    background-color: getMapColor(--white);
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 45% 45%;
+    grid-row-gap: 100px;
+    grid-column-gap: 10%;
+    padding: 20px 20px 40px 20px;
+    .container-card-new{
+        grid-template-rows: 500px;
+        overflow: hidden;
+    }
+    .container-img{
+        @include heightAndWidth(250px, 100%);
+        cursor: pointer;
+        &:hover{
+            opacity: 0.8;
+        }
+    }
+    img{
+        @include heightAndWidth(100%, 100%);
+        object-fit: cover;
+    }
+    .text-one{
+        font-size: 20px;
+        max-height: 110px;
+        font-weight: 600;
+    }
+    .text-two{
+        font-size: 16px;
+        max-height: 90px;
+        height: auto;
+    }
+    .text-one, .text-two{
+        overflow: hidden;
+        color: getMapColor(--color-text-list);
+        text-align: left;
+        margin-top: 20px;
+    }
+    span{
+        background: linear-gradient(to right bottom, #000, #fff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+.container-news-button{
+    @include row-flex(flex);
+    justify-content: center;
+    margin: 35px;
+    button{
+        @include button(--dark-blue, --white, --white, --dark-blue-one);
+    }
+}
+.container-subscribe{
+    color: var(--white);
+    position: relative;
+    display: flex;
+    img{
+        @include heightAndWidth("", 100%)
+    }
+    .container-text-subscribe{
+        @include heightAndWidth(576px, 60%);
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        justify-content: center;
+        position: absolute;
+    }
+    .items-subscribe{
+        @include heightAndWidth("", 380px);
+        color: getMapColor(--white);
+        margin: 0 auto;
+    }
+    .text-subscribe {
+        margin-bottom: 25px;
+        span{
+            margin: 0;
+            font-size: 25px;
+            letter-spacing: 1px;
+            font-family: $font_default;
+        }
+    }
+    .container-button-subscribe{
+        margin-top: 40px;
+        button{
+            @include button(--not-background, --white, --color-text-list, --white);
+            border: 1px solid getMapColor(--white);
+        }
+    }
+}
+.footer-contact-us{
+    @include heightAndWidth("", 70%);
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    flex-direction: column;
+    .contact-us{
+        text-align: center;
+        margin: 66px 0 23px 0;
+        font-size: 30px
+    }
+    .container-form{
+        background: #fff;
+        padding: 35px;
+        margin-bottom: 106px;
+        .container-checkbox{
+            display: flex;
+            margin: 46px 0 66px 0;
+            span{
+                margin-left: 15px;
+            }
+        }
+    }
+    .row-form{
+        display: grid;
+        grid-template-columns: repeat(2, 51%);
+        justify-content: space-between;
+        grid-template-rows: 90px;
+    }
+    .row-form, .row-form-full{
+        label{
+            color: getMapColor(--grey-1);
+            font-size: 13px;
+        }
+        input, textarea{
+            @include heightAndWidth(35px, 95%);
+            border: 1px solid getMapColor(--grey-border-inputs);
+            color: getMapColor(--grey-1);
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+    }
+    .row-form-full{
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 90px;
+        textarea{
+            @include heightAndWidth(88px, 100%);
+        }
+    }
+}
+.container-button-submit{
+    @include row-flex(flex);
+    justify-content: center;
+    margin-bottom: 40px;
+    button{
+        @include button(--dark-blue, --white, --dark-blue, --white)
+    }
+}
+.modal-contenido{
+    @include modal(--white, 400px, --dark-blue, --white, --dark-blue, --white, --dark-blue-one)
+}
+.modal{
+    background-color: rgba(0,0,0,.8);
+    position:fixed;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    opacity:0;
+    pointer-events:none;
+    transition: all 1s;
+}
+
+#miModal:target{
+    opacity:1;
+    pointer-events:auto;
+}
+@media only screen and (max-width: 900px) and (max-width: 700px){
+    .container-subscribe .container-text-subscribe{
+        width: 90%;
+    }
+
+}
+@media only screen and (max-width: 500px) {
+    body{
+        width: fit-content;
+    }
+    .container-general-news{
+        width: 90%;
+    }
+    .container-items{
+        width: 100%;
+        padding: 0 25px;
+    }
+    .news{
+        @include heightAndWidth(100%, 100%)
+    }
+    #top-news-dinamic .container-img{
+        max-height: 200px;
+        height: 200px;
+    }
+    #top-news-dinamic{
+        grid-template-columns: 100%;
+    }
+    #top-news-dinamic .container-card-new{
+        width: 100%;
+        min-height: 300px;
+    }
+    .container-subscribe .container-text-subscribe{
+        width: 100%;
+    }
+    .container-subscribe .items-subscribe{
+        margin: 0 auto;
+    }
+    .footer-contact-us{
+        width: 90%;
+    }
+    .footer-contact-us .row-form{
+        grid-template-columns: 100%;
+        grid-template-rows: none;
+    }
+    .footer-contact-us .row-form > div{
+        margin-bottom: 15px;
+    }
+    .footer-contact-us .row-form input, .row-form-full textarea{
+        font-size: 16px;
+        height: 50px;
+    }
+    .footer-contact-us .row-form, .row-form-full label{
+        font-size: 18px;
+    }
+    .container-items .logo:first-child{
+        margin-right: 5px; 
+    }
+
+  }
+  @media only screen and (max-width: 300px){
+    button{
+        font-size: 20px;
+    }
+    .footer-contact-us .container-form label{
+        font-size: 25px;
+    }
+    .footer-contact-us input, textarea{
+        font-size: 20px;
+        height: 50px;
+    }
+
+    .footer-contact-us .container-checkbox span{
+        font-size: 20px;
+    }
+    .navbar .logo-js{
+        display: none;
+    }
+}
