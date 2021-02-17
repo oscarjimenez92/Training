@@ -4,17 +4,6 @@
     font-family: $font
 }
 
-@mixin loader ($background){
-    position: fixed;
-    z-index: 1;
-    @include heightAndWidth("", 100%);
-    top: 0;
-    opacity: 0.7;
-    bottom: 0;
-    background: $background;
-    display: flex;
-}
-
 @mixin navbar ($background){
     background: $background;
     @include heightAndWidth(66px, 100%);
@@ -73,118 +62,18 @@
     margin: 0 auto;
 }
 
-@mixin container-alert($background-alert-color, $alert-text-color, $background-button-close, $color-button-close){
-    background: $background-alert-color;
-    @include row-flex(flex);
-    padding: 15px 20px;
-    font-size: 16px;
-    margin: 30px 0 0 0;
-    p{
-        color: $alert-text-color;
-        opacity: 0.6;
-        margin: 0;
-    }
-    .container-button-close{
-        margin-left: auto;
-        cursor: pointer;
-        opacity: 0.5;
-        div{
-            @include heightAndWidth(20px, 20px);
-            border-radius: 50px;
-            background-color: $background-button-close;
-            text-align: center;
-            color: $color-button-close;
-            font-size: $font-size;
-        }
-    }
-}
-
 @mixin button ($background-color, $text-color, $color-text-hover, $background-color-hover){
     border: none;
+    font-size: 14px;
     background: getMapColor($background-color);
     color: getMapColor($text-color);
-    padding: 10px 25px;
+    @include heightAndWidth(40px, 163px);
     cursor: pointer;
     border-radius: 4px;
     &:hover{
         background: getMapColor($background-color-hover);
         @if $color-text-hover{
             color: getMapColor($color-text-hover)
-        }
-    }
-}
-
-@mixin modal($background-color, $width, $background-header, $color-text-header, $background-color-footer-a, $color-text-footer, $background-color-text-a-hover){
-    background-color: getMapColor($background-color);
-    @include heightAndWidth("", $width);
-    margin: 20% auto;
-    border-radius: 5px;
-    position: relative;
-    .modal-body{
-        padding: 20px;
-        #messageModal{
-            margin: 0;
-            h4{
-                color: getMapColor(--green);
-                font-weight: 700;
-                font-size: 18px;
-                margin: 0;
-            }
-            div{
-                display: flex;
-                justify-content: space-between;
-                span{
-                    &:last-of-type{
-                        color: getMapColor(--grey-1);
-                        opacity: 0.6;
-                        font-weight: bold;
-                        width: 185px;
-                        max-width: 185px;
-                        overflow: hidden;
-                        text-overflow: ellipsis;
-                        text-align: right;
-                        cursor: pointer;
-                    }
-                }
-            }
-        }
-    }
-    .modal-header{
-        @include row-flex(flex);
-        padding: 10px;
-        background-color: getMapColor($background-header);
-        border-top-left-radius: 5px;
-        border-top-right-radius: 5px;
-    }
-    h2{
-        margin: 0;
-        color: getMapColor($color-text-header);
-    }
-    .button-close{
-        font-size: $font-size;
-        color: getMapColor(--grey-1);
-        margin-left: auto;
-        a{
-            text-decoration: none;
-        }
-    }
-    .modal-footer{
-        padding: 15px;
-        display: flex;
-        justify-content: flex-end;
-        border-top: 1px solid getMapColor(--grey-footer);
-        a{
-            cursor: pointer;
-            text-decoration: none;
-            border-radius: 3px;
-            @include heightAndWidth(25px, 120px);
-            font-size: $font-size;
-            background-color: getMapColor($background-color-footer-a);
-            padding: 5px 20px;
-            color: getMapColor($color-text-footer);
-            &:hover{
-                background-color: getMapColor($background-color-text-a-hover);
-            }
         }
     }
 }
@@ -205,6 +94,6 @@
         height: $height;
     }
     @if type-of($width) == number{
-        width: $width;
+        width: $width !important;
     }
 }

@@ -13,91 +13,29 @@ body{
     @include body(getMapColor(--grey_body), $font_default);
 }
 .navbar{
-    @include navbar(getMapColor(--white)); 
-    .navbar-item{
-        cursor: pointer;
-        @include heightAndWidth(100%, "");
-        margin-right: 25px;
-        align-items: center; 
-        text-align: center;
-        &:hover{
-            background: getMapColor(--grey_body);
-        }
-    }
-    .navbar-item {
-        &:last-of-type{
-            margin-left: auto;
-            margin-right: 0;
-        }
-        a{
-            text-decoration: none; 
-            color: getMapColor(--color-text-list);
-            letter-spacing: -0.09px;
-            font-size: 16px;
-            white-space: nowrap;
-        }
-        .logo-js{
-            @include heightAndWidth(22px, 22px);
-            background: getMapColor(--purple);
-            padding: 2px;
-            border-radius: 50px;
-            color: getMapColor(--white);
-            font-size: $font-size;
-            float: right;
-            a{
-                vertical-align: middle;
-            }
-        }
-    }
-    .drop{
-        font-size: 16px;
-        border: none;
-    }
-    .drop:after{
-        content: '\25BC'; 
-        font-size: 13px;
-        margin-left: 5px;
-        color: getMapColor(--color-text-list);
-    }
-    .dropdown{
-        position: relative;
-        display: inline-block;
-        &:hover{
-            .dropdown-content{ 
-                display: block;
-            }
-        }
-    }
-    .dropdown-content{
-        @include dropdown(getMapColor(--dropdown-color-back), getMapColor(--color-text-list), getMapColor(--dark-blue), getMapColor(--white))
+    .dropdown-button{
+        padding: 0;
     }
 }
 .container-items{
     @include container-items(70%);
-    .logo{
-        margin-right: 45px;
-        @include heightAndWidth(55px, 55px)
-    }
+    padding: 0 !important;
     img{
         @include heightAndWidth(55px, 55px)
     }
+    margin: 0 auto;
 }
-.main{
-    margin-top: 80px;
-    .loader{
-        @include loader(getMapColor(--white));
-        img{
-            opacity: 0.9;
-            display: block;
-            margin: 0 auto; 
-        }
+main{
+    .eui-navbar-brand{
+        align-items: center !important;
     }
 }
 .container-general-news{
     @include container-general-news(70%);
+    margin-top: 80px;
     .top-news{
-        @include heightAndWidth("", 100%);
-        margin: 30px 0 40px 0;
+        margin: 30px 0 25px 0;
+        padding: 0;
         h1{
             font-size: 30px;
             margin: 0;
@@ -105,62 +43,50 @@ body{
             color: getMapColor(--color-text-list);
         }
     }
-    .container-alert{
-        @include container-alert(getMapColor(--light-blue), getMapColor(--color-text-list), getMapColor(--grey-2), getMapColor(--white));
-    }
-}
-#top-news-dinamic{
-    background-color: getMapColor(--white);
-    padding: 20px;
-    display: grid;
-    grid-template-columns: 45% 45%;
-    grid-row-gap: 100px;
-    grid-column-gap: 10%;
-    padding: 20px 20px 40px 20px;
-    .container-card-new{
-        grid-template-rows: 500px;
-        overflow: hidden;
-    }
-    .container-img{
-        @include heightAndWidth(250px, 100%);
-        cursor: pointer;
-        &:hover{
-            opacity: 0.8;
+    .card-grid{
+        .eui-card{
+            margin: 0;
+            padding: 40px 25px;
         }
     }
-    img{
-        @include heightAndWidth(100%, 100%);
-        object-fit: cover;
+    .eui-panel-body{
+        padding: 0 !important;
     }
-    .text-one{
-        font-size: 20px;
-        max-height: 110px;
-        font-weight: 600;
+    .eui-card{
+        box-shadow: none;
+        p{
+            height: 95px;
+            max-height: 200px;
+            overflow: hidden;
+            white-space: pre-wrap;
+            text-overflow: ellipsis;
+        }
     }
-    .text-two{
-        font-size: 16px;
-        max-height: 90px;
-        height: auto;
+    .container-img-card{
+        height: 148px;
+        width: 100%;
+        cursor: pointer;
+        margin-bottom: 20px;
+        img{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
     }
-    .text-one, .text-two{
-        overflow: hidden;
-        color: getMapColor(--color-text-list);
-        text-align: left;
-        margin-top: 20px;
-    }
-    span{
-        background: linear-gradient(to right bottom, #000, #fff);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
+    
+}
+.listModal{
+    box-sizing: border-box;
+    padding: 5px;
+    color: #ff7c7c;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ffeaea;
+}
+.listModal:last-of-type{
+    border: none;
 }
 .container-news-button{
-    @include row-flex(flex);
-    justify-content: center;
     margin: 35px;
-    button{
-        @include button(--dark-blue, --white, --white, --dark-blue-one);
-    }
 }
 .container-subscribe{
     color: var(--white);
@@ -176,6 +102,7 @@ body{
         margin: 0 auto;
         justify-content: center;
         position: absolute;
+        top: calc(30%);
     }
     .items-subscribe{
         @include heightAndWidth("", 380px);
@@ -200,11 +127,11 @@ body{
     }
 }
 .footer-contact-us{
-    @include heightAndWidth("", 70%);
     display: flex;
     justify-content: center;
     margin: 0 auto;
     flex-direction: column;
+    @include heightAndWidth("", 70%);
     .contact-us{
         text-align: center;
         margin: 66px 0 23px 0;
@@ -249,28 +176,10 @@ body{
             @include heightAndWidth(88px, 100%);
         }
     }
-}
-.container-button-submit{
-    @include row-flex(flex);
-    justify-content: center;
-    margin-bottom: 40px;
-    button{
-        @include button(--dark-blue, --white, --dark-blue, --white)
+    .button-submit{
+        width: 171px;
+        height: 40px;
     }
-}
-.modal-contenido{
-    @include modal(--white, 400px, --dark-blue, --white, --dark-blue, --white, --dark-blue-one)
-}
-.modal{
-    background-color: rgba(0,0,0,.8);
-    position:fixed;
-    top:0;
-    right:0;
-    bottom:0;
-    left:0;
-    opacity:0;
-    pointer-events:none;
-    transition: all 1s;
 }
 
 #miModal:target{
@@ -292,7 +201,7 @@ body{
     }
     .container-items{
         width: 100%;
-        padding: 0 25px;
+        padding: 0 25px !important;
     }
     .news{
         @include heightAndWidth(100%, 100%)
@@ -315,7 +224,7 @@ body{
         margin: 0 auto;
     }
     .footer-contact-us{
-        width: 90%;
+        width: 90% !important;
     }
     .footer-contact-us .row-form{
         grid-template-columns: 100%;
@@ -324,7 +233,7 @@ body{
     .footer-contact-us .row-form > div{
         margin-bottom: 15px;
     }
-    .footer-contact-us .row-form input, .row-form-full textarea{
+    .footer-contact-us .row-form input, .row-form-full textarea{ 
         font-size: 16px;
         height: 50px;
     }
