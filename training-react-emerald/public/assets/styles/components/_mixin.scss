@@ -94,6 +94,6 @@
         height: $height;
     }
     @if type-of($width) == number{
-        width: $width !important;
+        width: $width;
     }
 }
