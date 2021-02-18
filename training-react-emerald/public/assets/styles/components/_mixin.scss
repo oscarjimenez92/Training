@@ -4,17 +4,6 @@
     font-family: $font
 }
 
-@mixin navbar ($background){
-    background: $background;
-    @include heightAndWidth(66px, 100%);
-    top: 0;
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.18);
-    @include row-flex(flex);
-    justify-content: center;
-    position: fixed;
-    z-index: 2;
-}
-
 @mixin container-items($width, $paddingBothSides: 0, $marginRight: 0){
     @include row-flex(flex);
     @include heightAndWidth("", $width);
@@ -23,32 +12,6 @@
     }
     @if $marginRight > 0{
         margin-right: $marginRight
-    }
-}
-
-@mixin dropdown($dropdown-brackground, $link-color, $link-color-hover, $link-color-background){
-    display: none;
-    position: absolute;
-    @if $dropdown-brackground {
-        background-color: $dropdown-brackground;
-    }@else{
-        background-color: getMapColor(--white);
-    }
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    a{
-        color: $link-color;
-        text-decoration: none;
-        padding: 10px 15px;
-        display: block;
-        i{
-            margin-left: 15px;
-        }
-        &:hover{
-            background-color: $link-color-background;
-            color: $link-color-hover;
-        }
     }
 }
 

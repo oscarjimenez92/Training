@@ -12,11 +12,7 @@ $font-size: 14px;
 body{
     @include body(getMapColor(--grey_body), $font_default);
 }
-.navbar{
-    .dropdown-button{
-        padding: 0;
-    }
-}
+
 .container-items{
     padding: 0 !important;
     img{
@@ -44,9 +40,12 @@ main{
     .card-grid{
         box-shadow: none;
         .eui-card{
-            margin: 0;
-            padding: 40px 25px;
+            margin: 0 0 110px 0;
+            padding: 0;
             box-shadow: none;
+            &:nth-last-child(-n+2) {
+                margin: 0;
+            }
             h1{
                 font-size: 21px;
                 margin-bottom: 20px !important;
@@ -77,7 +76,7 @@ main{
         }
     }
     .eui-panel-body{
-        padding: 0 !important;
+        padding: 40px 29px 29px 29px !important;
     }
     .container-img-card{
         height: 148px;
@@ -89,6 +88,9 @@ main{
             width: 100%;
             object-fit: cover;
         }
+        &:hover{
+            opacity: 0.8;
+        }
     }
     
 }
@@ -96,14 +98,14 @@ main{
     box-sizing: border-box;
     padding: 5px;
     margin-bottom: 10px;
-    border-bottom: 1px solid #ffeaea;
+    border-bottom: 1px solid #b2d8b2;
 }
 .listModal:last-of-type{
     border: none;
 }
 .container-news-button{
     margin: 34px 0 81px 0;
-    button{
+    .eui-btn{
         width: 170px;
     }
 }
@@ -236,9 +238,6 @@ main{
 
     .footer-contact-us .container-checkbox span{
         font-size: 20px;
-    }
-    .navbar .logo-js{
-        display: none;
     }
 }
 

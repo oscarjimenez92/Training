@@ -26,25 +26,42 @@ import {
 } from "emerald-ui";
 import "emerald-ui/lib/styles.css";
 export default function App() {
+  /**
+   * URL FOR REQUEST THE API NY TIMES.
+   */
   const urlService =
     "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=election&api-key=5AAMG971G6GEX04HYE8Jhqw0qu5ITQho";
   const urlImages = "https://static01.nyt.com/";
-  const palete_colors = {
-    error: "#d87f7f",
-    success: "#58a258",
-  };
+
+  /**
+   * 
+   * 
+   * HOOKS APP
+   * 
+   * 
+   */
+
+  /**
+   * State that saves the api request
+   */
   const [dataRequest, setDataRequest] = useState([]);
+
+  /**
+   * Saves the percentage of loading the button 'submit'.
+   */
   const [percentageForm, setPercentageForm] = useState(0);
-  const [mensajeError, setMensajeError] = useState({
-    firstname: false,
-    lastname: false,
-    email: false,
-    phonenumber: false,
-    comments: false,
-    sendEmail: false,
-  });
+  /**
+   * Flag for open and close the modal.
+   */
   const [openModal, setOpenModal] = useState(false);
-  const [countItemsPage, setcountItemsPage] = useState(4);
+  /**
+   * 
+   * Item counter from 4 to 4, it increases for each user click on the button 'View more stories'.
+   */
+  const [countItemsPage, setCountItemsPage] = useState(4);
+  /**
+   * Saves all the data entered by the user in the form.
+   */
   const [dataForm, setDataForm] = useState({
     firstname: "",
     lastname: "",
@@ -53,6 +70,10 @@ export default function App() {
     comments: "",
     sendEmail: false,
   });
+  /**
+   * State for validate changes on the fields of form.
+   */
+  const [errorMessage, setErrorMessage] = useState({...dataForm});
   const currentItems = 0,
     styleLoader = { margin: 0, width: "100%", marginBottom: "20px" };
 
@@ -92,7 +113,6 @@ export default function App() {
             } else {
               setDataRequest([]);
             }
-            console.log(data);
           });
         })
         .catch(function (err) {
@@ -114,9 +134,6 @@ export default function App() {
     setPercentageForm(Math.trunc(percentage));
   }, [dataForm]);
 
-  useEffect(() => {
-    console.log(mensajeError);
-  }, [mensajeError]);
 
   /**
    * Remove class 'active' of items actives on the dropdown.
@@ -145,7 +162,6 @@ export default function App() {
    */
   const closeElement = (elm) => {
     elm.target.offsetParent.style.display = "none";
-    console.log(elm.target.offsetParent);
   };
 
   /**
@@ -154,36 +170,22 @@ export default function App() {
    */
   const validateDataField = (elm) => {
     try {
-      let expRegEmail = new RegExp(
-          /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/
-        ),
-        regExpNumber = new RegExp(/^[0-9]{10}$/);
-      if (
-        elm.target.name !== "email" &&
-        elm.target.name !== "phonenumber" &&
-        elm.target.name !== "sendEmail"
-      ) {
+      let expRegEmail = new RegExp(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/), 
+          regExpNumber = new RegExp(/^[0-9]{10}$/);
+      if (elm.target.name !== "email" && elm.target.name !== "phonenumber" && elm.target.name !== "sendEmail") {
         if (!!!elm.target.value.trim()) {
-          setMensajeError({ ...mensajeError, [elm.target.name]: true });
+          setErrorMessage({ ...errorMessage, [elm.target.name]: true });
         } else {
-          setMensajeError({ ...mensajeError, [elm.target.name]: false });
+          setErrorMessage({ ...errorMessage, [elm.target.name]: false });
         }
-      } else if (
-        elm.target.name === "email" &&
-        !expRegEmail.test(elm.target.value) &&
-        !!elm.target.value.trim()
-      ) {
-        setMensajeError({ ...mensajeError, [elm.target.name]: true });
-      } else if (
-        elm.target.name === "phonenumber" &&
-        !regExpNumber.test(elm.target.value) &&
-        !!elm.target.value.trim()
-      ) {
-        setMensajeError({ ...mensajeError, [elm.target.name]: true });
+      } else if (elm.target.name === "email" && !expRegEmail.test(elm.target.value) && !!elm.target.value.trim()) {
+        setErrorMessage({ ...errorMessage, [elm.target.name]: true });
+      } else if (elm.target.name === "phonenumber" && !regExpNumber.test(elm.target.value) && !!elm.target.value.trim()) {
+        setErrorMessage({ ...errorMessage, [elm.target.name]: true });
       } else if (elm.target.name === "sendEmail") {
         return elm.target.checked;
       } else {
-        setMensajeError({ ...mensajeError, [elm.target.name]: false });
+        setErrorMessage({ ...errorMessage, [elm.target.name]: false });
       }
       return elm.target.value;
     } catch (error) {
@@ -199,14 +201,15 @@ export default function App() {
    * @param {element with changes on the form} e
    */
   const handleChange = (e) => {
-    setDataForm({
-      ...dataForm,
-      [e.target.name]: validateDataField(e),
-    });
+    e && setDataForm({...dataForm, [e.target.name]: validateDataField(e)});
   };
 
+  /**
+   * Converts the first character of labelto Uppercase
+   * @param {label of field success} str 
+   */
   const convertLabelToUpperCase = (str) => {
-    return str.charAt(0).toUpperCase() + str.slice(1);
+    return !!str ? str.charAt(0).toUpperCase() + str.slice(1) : "";
   };
 
   /**
@@ -370,7 +373,7 @@ export default function App() {
                 color={countItemsPage > dataRequest.length ? "danger" : "info"}
                 onClick={() => {
                   if (countItemsPage < dataRequest.length) {
-                    setcountItemsPage((countItemsPage) => countItemsPage + 4);
+                    setCountItemsPage((countItemsPage) => countItemsPage + 4);
                   }
                 }}
               >
@@ -452,7 +455,7 @@ export default function App() {
                 {dataRequest.length > 0 ? (
                   <TextField
                     errorMessage={
-                      mensajeError.firstname
+                      errorMessage.firstname
                         ? "fill in the name field Firstname"
                         : ""
                     }
@@ -470,7 +473,7 @@ export default function App() {
                 {dataRequest.length > 0 ? (
                   <TextField
                     errorMessage={
-                      mensajeError.lastname
+                      errorMessage.lastname
                         ? "fill in the name field Lastname"
                         : ""
                     }
@@ -490,7 +493,7 @@ export default function App() {
                 {dataRequest.length > 0 ? (
                   <TextField
                     errorMessage={
-                      mensajeError.email
+                      errorMessage.email
                         ? "fill in the name field Email, E.G. - example@gmail.com"
                         : ""
                     }
@@ -510,11 +513,12 @@ export default function App() {
                     min="0"
                     maxLength={10}
                     errorMessage={
-                      mensajeError.phonenumber
+                      errorMessage.phonenumber
                         ? "fill in the name field Phonenumber (Min. 10 digits)."
                         : ""
                     }
                     label="Phonenumber"
+                    onMaxLengthReached={(e) => {console.log("no mas")}}
                     onChange={(e) => handleChange(e)}
                     name="phonenumber"
                     value={dataForm.phonenumber}
@@ -536,7 +540,7 @@ export default function App() {
                   <TextField
                     textarea={true}
                     errorMessage={
-                      mensajeError.comments
+                      errorMessage.comments
                         ? "fill in the name field comments"
                         : ""
                     }
@@ -573,7 +577,7 @@ export default function App() {
                     progress={percentageForm}
                     disabled={
                       percentageForm === 100 &&
-                      !Object.values(mensajeError).find((msn) => !!msn)
+                      !Object.values(errorMessage).find((msn) => !!msn)
                         ? false
                         : true
                     }
