@@ -38,8 +38,6 @@ main .eui-navbar-brand {
       margin: 0 0 110px 0;
       padding: 0;
       box-shadow: none; }
-      .container-general-news .card-grid .eui-card:nth-last-child(-n+2) {
-        margin: 0; }
       .container-general-news .card-grid .eui-card h1 {
         font-size: 21px;
         margin-bottom: 20px !important;
@@ -147,6 +145,12 @@ main .eui-navbar-brand {
     margin: 46px 0 54px 0; }
     .footer-contact-us .container-form .container-checkbox .eui-col {
       padding: 0; }
+    .footer-contact-us .container-form .container-checkbox .eui-checkbox {
+      margin: 0;
+      padding: 0; }
+
+.footer-contact-us .row-form {
+  margin-bottom: 20px; }
 
 .footer-contact-us .row-form label, .footer-contact-us .row-form-full label {
   color: #4B5353;
@@ -160,9 +164,8 @@ main .eui-navbar-brand {
   border-radius: 3px;
   box-sizing: border-box; }
 
-.footer-contact-us .row-form-full textarea {
-  height: 88px;
-  width: 100%; }
+.footer-contact-us .row-form-full .eui-text-field {
+  padding: 0; }
 
 .footer-contact-us .button-submit {
   width: 171px;
@@ -200,17 +203,23 @@ main .eui-navbar-brand {
     font-size: 20px;
     height: 50px; }
   .footer-contact-us .container-checkbox span {
-    font-size: 20px; } }
+    font-size: 20px; }
+  .eui-card {
+    margin: 0 0 40px 0; } }
 
 @media (max-width: 575px) {
   .container-general-news h2, .container-items h2, .footer-contact-us h2 {
-    margin: 0; } }
+    margin: 0; }
+  .eui-card {
+    margin: 0 0 40px 0 !important; } }
 
 @media (min-width: 576px) {
   .container-general-news, .container-items, .footer-contact-us {
     width: 540px !important; }
     .container-general-news h2, .container-items h2, .footer-contact-us h2 {
-      margin: 0 0 0 20px; } }
+      margin: 0 0 0 20px; }
+  .eui-card {
+    margin: 0 0 40px 0 !important; } }
 
 @media (min-width: 768px) {
   .container-general-news, .container-items, .footer-contact-us {

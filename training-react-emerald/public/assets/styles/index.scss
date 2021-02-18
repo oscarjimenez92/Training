@@ -43,9 +43,9 @@ main{
             margin: 0 0 110px 0;
             padding: 0;
             box-shadow: none;
-            &:nth-last-child(-n+2) {
-                margin: 0;
-            }
+            // &:nth-last-child(-n+2) {
+            //     margin: 0;
+            // }
             h1{
                 font-size: 21px;
                 margin-bottom: 20px !important;
@@ -163,7 +163,14 @@ main{
             .eui-col{
                 padding: 0;
             }
+            .eui-checkbox{
+                margin: 0;
+                padding: 0;
+            }
         }
+    }
+    .row-form{
+        margin-bottom: 20px;
     }
     .row-form, .row-form-full{
         label{
@@ -179,9 +186,9 @@ main{
         }
     }
     .row-form-full{
-        textarea{
-            @include heightAndWidth(88px, 100%);
-        }
+       .eui-text-field{
+           padding: 0;
+       }
     }
     .button-submit{
         width: 171px;
@@ -239,6 +246,9 @@ main{
     .footer-contact-us .container-checkbox span{
         font-size: 20px;
     }
+    .eui-card{
+        margin: 0 0 40px 0;
+    }
 }
 
 @media (max-width: 575px) {
@@ -246,6 +256,9 @@ main{
         h2{
             margin: 0;
         }
+    }
+    .eui-card{
+        margin: 0 0 40px 0 !important;
     }
 }
 
@@ -255,6 +268,9 @@ main{
         h2{
             margin: 0 0 0 20px;
         }
+    }
+    .eui-card{
+        margin: 0 0 40px 0 !important;
     }
 }
 

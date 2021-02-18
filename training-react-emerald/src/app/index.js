@@ -348,13 +348,13 @@ export default function App() {
                 </CardGrid>
               ) : (
                 <Row lg={12}>
-                  <Col>
+                  <Col xs={12} lg={6} md={6} sm={6}>
                     <SkeletonLoader
                       style={{ width: "auto", height: "432px" }}
                       loading={dataRequest.length > 0 ? false : true}
                     />
                   </Col>
-                  <Col>
+                  <Col xs={12} lg={6} md={6} sm={6}>
                     <SkeletonLoader
                       style={{ width: "auto", height: "432px" }}
                       loading={dataRequest.length > 0 ? false : true}
