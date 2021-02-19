@@ -209,6 +209,21 @@ export default function App() {
   };
 
   /**
+   * Open new on othe tab.
+   */
+  const openNew = (elm, target) => {
+    window.open(elm.web_url, target)
+  }
+
+  /**
+   * Return the image for the container.
+   * @param {array photos} multimedia 
+   */
+  const returnImageToRender = multimedia => {
+    return multimedia.find(photo => photo.width >= 390 && photo.width <= 404)
+  } 
+
+  /**
    * RENDER APP
    */
   return (
@@ -320,7 +335,7 @@ export default function App() {
                       return (
                         <Card
                           key={`#_${index + 1}`}
-                          onClick={() => window.open(item.web_url, "_blank")}
+                          onClick={() => openNew(item, "_blank")}
                           id={`target_${index + 1}`}
                         >
                           <div
@@ -331,11 +346,7 @@ export default function App() {
                             </div>
                             <img
                               src={`${urlImages}${
-                                item.multimedia[
-                                  Math.floor(
-                                    Math.random() * item.multimedia.length
-                                  )
-                                ].url
+                                returnImageToRender(item.multimedia).url
                               }`}
                               alt=""
                             />
