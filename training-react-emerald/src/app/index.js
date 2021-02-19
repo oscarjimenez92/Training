@@ -153,6 +153,7 @@ export default function App() {
     elm.stopPropagation();
     console.log(elm);
     removeClassActive();
+    window.location.href = elm.target.hash
     elm.currentTarget.classList.add("active");
   };
 
@@ -246,6 +247,7 @@ export default function App() {
                       <DropdownItem
                         href={`#target_${index + 1}`}
                         key={index + 1}
+                        target="_self"
                         onClick={addClassActive}
                         eventKey={index + 1}
                       >
@@ -324,10 +326,10 @@ export default function App() {
                         <Card
                           key={`#_${index + 1}`}
                           onClick={() => window.open(item.web_url, "_blank")}
+                          id={`target_${index + 1}`}
                         >
                           <div
                             className="container-img-card"
-                            id={`target_${index + 1}`}
                           >
                             <img
                               src={`${urlImages}${
@@ -406,13 +408,12 @@ export default function App() {
       <Container fluid={true} className="container-subscribe">
         {dataRequest.length > 0 ? (
           <Row>
-            <img src="./assets/images/background.jpg" alt="" height="576"></img>
             <Row lg={7} md={7} sm={12} className="container-text-subscribe">
               <Col lg={12} sm={8} xs={10} md={10} className="items-subscribe">
-                <Row className="text-subscribe" tabIndex="11">
+                <Row className="text-title-subscribe" tabIndex="11">
                   <span>Subscribe to our newsletter.</span>
                 </Row>
-                <Row tabIndex="12">
+                <Row tabIndex="12" className="text-subscribe">
                   <span>
                     Subscribe to our newsletter receive weekly digests of the
                     best and most ground-breaking news. Also receive a discount

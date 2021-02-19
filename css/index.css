@@ -1,0 +1,120 @@
+/**
+    FILES CSS OLD
+*/
+/*
+    FILES SASS
+*/
+/**
+    elements style
+*/
+/*map-get($palete_colors, --grey-1); */
+/**
+
+INIT CSS TO SASS
+
+*/
+body {
+  background: #f1f4f8;
+  margin: 0;
+  font-family: "Open Sans"; }
+
+.navbar {
+  background: #fff;
+  height: 66px;
+  width: 100%;
+  top: 0;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.18);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 2; }
+  .navbar .navbar-item {
+    cursor: pointer;
+    height: 100%;
+    margin-right: 25px;
+    align-items: center;
+    text-align: center; }
+    .navbar .navbar-item:hover {
+      background: #f1f4f8; }
+  .navbar .navbar-item:lastchild {
+    margin: 0 auto;
+    margin-right: 0;
+    margin-left: auto; }
+  .navbar .navbar-item a {
+    text-decoration: none;
+    color: #1D2121;
+    letter-spacing: -0.09px;
+    font-size: 16px;
+    white-space: nowrap; }
+  .navbar .navbar-item .logo-js {
+    height: 22px;
+    width: 22px;
+    background: #9100AD;
+    padding: 2px;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 14px;
+    float: right; }
+    .navbar .navbar-item .logo-js a {
+      vertical-align: middle; }
+  .navbar .drop {
+    font-size: 16px;
+    border: none; }
+  .navbar .drop:after {
+    content: '\25BC';
+    font-size: 13px;
+    margin-left: 5px;
+    color: #1D2121; }
+  .navbar .dropdown {
+    position: relative;
+    display: inline-block; }
+    .navbar .dropdown:hover .dropdown-content {
+      display: block; }
+  .navbar .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1; }
+    .navbar .dropdown-content a {
+      color: #1D2121;
+      text-decoration: none;
+      padding: 10px 15px;
+      display: block; }
+      .navbar .dropdown-content a i {
+        margin-left: 15px; }
+      .navbar .dropdown-content a:hover {
+        background-color: #fff;
+        color: #0073E9; }
+
+.container-items {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 70%; }
+  .container-items .logo {
+    margin-right: 45px;
+    height: 55px;
+    width: 55px; }
+  .container-items img {
+    height: 55px;
+    width: 55px; }
+
+.main {
+  margin-top: 80px; }
+  .main .loader {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    top: 0;
+    opacity: 0.7;
+    bottom: 0;
+    background: #fff;
+    display: flex; }
+    .main .loader img {
+      opacity: 0.9;
+      display: block;
+      margin: 0 auto; }

@@ -24,6 +24,8 @@ main .eui-navbar-brand {
 
 .container-general-news {
   margin-top: 80px; }
+  .container-general-news .eui-alert {
+    flex-wrap: nowrap !important; }
   .container-general-news .top-news {
     margin: 25px 0;
     padding: 0; }
@@ -90,34 +92,33 @@ main .eui-navbar-brand {
     width: 170px; }
 
 .container-subscribe {
-  color: var(--white);
-  position: relative;
-  display: flex; }
+  background: url("../../images/background.jpg");
+  background-size: cover;
+  background-position: right; }
   .container-subscribe img {
     width: 100%; }
   .container-subscribe .container-text-subscribe {
     height: 576px;
-    width: 60%;
-    display: flex;
-    flex-direction: column;
+    height: 576px;
+    width: 940px;
     margin: 0 auto;
-    justify-content: center;
-    position: absolute;
-    top: calc(30%); }
+    display: flex;
+    flex-direction: column; }
   .container-subscribe .items-subscribe {
-    width: 380px;
+    width: 400px;
     color: #fff;
-    margin: 0 auto; }
-  .container-subscribe .text-subscribe {
-    margin-bottom: 25px; }
-    .container-subscribe .text-subscribe span {
-      margin: 0;
-      font-size: 25px;
-      letter-spacing: 1px;
-      font-family: "Open Sans"; }
-  .container-subscribe .container-button-subscribe {
-    margin-top: 40px; }
-    .container-subscribe .container-button-subscribe button {
+    justify-content: center;
+    display: flex;
+    flex-direction: column; }
+    .container-subscribe .items-subscribe .text-title-subscribe {
+      font-size: 30px;
+      margin-bottom: 25px; }
+    .container-subscribe .items-subscribe .text-subscribe {
+      margin-bottom: 40px;
+      font-size: 17px;
+      letter-spacing: -0.9px; }
+    .container-subscribe .items-subscribe .container-button-subscribe button {
+      border: 1px solid #fff !important;
       border: none;
       font-size: 14px;
       background: transparent;
@@ -125,11 +126,10 @@ main .eui-navbar-brand {
       height: 40px;
       width: 163px;
       cursor: pointer;
-      border-radius: 4px;
-      border: 1px solid #fff; }
-      .container-subscribe .container-button-subscribe button:hover {
+      border-radius: 4px; }
+      .container-subscribe .items-subscribe .container-button-subscribe button:hover {
         background: #fff;
-        color: #1D2121; }
+        color: #000d26; }
 
 .footer-contact-us .contact-us {
   text-align: center;
@@ -208,39 +208,39 @@ main .eui-navbar-brand {
     margin: 0 0 40px 0; } }
 
 @media (max-width: 575px) {
-  .container-general-news h2, .container-items h2, .footer-contact-us h2 {
+  .container-general-news h2, .container-text-subscribe h2, .container-items h2, .footer-contact-us h2 {
     margin: 0; }
   .eui-card {
     margin: 0 0 40px 0 !important; } }
 
 @media (min-width: 576px) {
-  .container-general-news, .container-items, .footer-contact-us {
+  .container-general-news, .container-text-subscribe, .container-items, .footer-contact-us {
     width: 540px !important; }
-    .container-general-news h2, .container-items h2, .footer-contact-us h2 {
+    .container-general-news h2, .container-text-subscribe h2, .container-items h2, .footer-contact-us h2 {
       margin: 0 0 0 20px; }
   .eui-card {
     margin: 0 0 40px 0 !important; } }
 
 @media (min-width: 768px) {
-  .container-general-news, .container-items, .footer-contact-us {
+  .container-general-news, .container-text-subscribe, .container-items, .footer-contact-us {
     width: 640px !important; }
-    .container-general-news h2, .container-items h2, .footer-contact-us h2 {
+    .container-general-news h2, .container-text-subscribe h2, .container-items h2, .footer-contact-us h2 {
       margin: 0 0 0 20px; } }
 
 @media (min-width: 992px) {
-  .container-general-news, .container-items, .footer-contact-us {
+  .container-general-news, .container-text-subscribe, .container-items, .footer-contact-us {
     width: 980px !important; }
-    .container-general-news h2, .container-items h2, .footer-contact-us h2 {
+    .container-general-news h2, .container-text-subscribe h2, .container-items h2, .footer-contact-us h2 {
       margin: 0 0 0 20px; } }
 
 @media (min-width: 990px) {
-  .container-general-news, .container-items, .footer-contact-us {
+  .container-general-news, .container-text-subscribe, .container-items, .footer-contact-us {
     width: 940px !important; }
-    .container-general-news h2, .container-items h2, .footer-contact-us h2 {
+    .container-general-news h2, .container-text-subscribe h2, .container-items h2, .footer-contact-us h2 {
       margin: 0 0 0 20px; } }
 
 @media (min-width: 1200px) {
-  .container-general-news, .container-items, .footer-contact-us, .container-form {
+  .container-general-news, .container-text-subscribe, .container-items, .footer-contact-us, .container-form {
     width: 940px; }
-    .container-general-news h2, .container-items h2, .footer-contact-us h2, .container-form h2 {
+    .container-general-news h2, .container-text-subscribe h2, .container-items h2, .footer-contact-us h2, .container-form h2 {
       margin: 0 0 0 20px; } }

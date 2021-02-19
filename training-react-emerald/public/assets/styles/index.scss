@@ -27,6 +27,9 @@ main{
 }
 .container-general-news{
     margin-top: 80px;
+    .eui-alert{
+        flex-wrap: nowrap !important;
+    }
     .top-news{
         margin: 25px 0;
         padding: 0;
@@ -104,48 +107,52 @@ main{
     border: none;
 }
 .container-news-button{
-    margin: 34px 0 81px 0;
+    margin: 34px 0 81px 0; 
     .eui-btn{
         width: 170px;
     }
 }
+
+
 .container-subscribe{
-    color: var(--white);
-    position: relative;
-    display: flex;
+    background: url("../../images/background.jpg");
+    background-size: cover;
+    background-position: right;
     img{
         @include heightAndWidth("", 100%)
     }
     .container-text-subscribe{
-        @include heightAndWidth(576px, 60%);
+        @include heightAndWidth(576px, "");
+        height: 576px;
+        width: 940px;
+        margin: 0 auto;
         display: flex;
         flex-direction: column;
-        margin: 0 auto;
-        justify-content: center;
-        position: absolute;
-        top: calc(30%);
+        
     }
     .items-subscribe{
-        @include heightAndWidth("", 380px);
+        @include heightAndWidth("", 400px);
         color: getMapColor(--white);
-        margin: 0 auto;
-    }
-    .text-subscribe {
-        margin-bottom: 25px;
-        span{
-            margin: 0;
-            font-size: 25px;
-            letter-spacing: 1px;
-            font-family: $font_default;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        .text-title-subscribe{
+            font-size: 30px;
+            margin-bottom: 25px;
+        }
+        .text-subscribe{
+            margin-bottom: 40px;
+            font-size: 17px;
+            letter-spacing: -0.9px;
+        }
+        .container-button-subscribe{
+            button{
+                border: 1px solid getMapColor(--white) !important;
+                @include button(--not-background, --white, --dark-blue-button, --white)
+            }
         }
     }
-    .container-button-subscribe{
-        margin-top: 40px;
-        button{
-            @include button(--not-background, --white, --color-text-list, --white);
-            border: 1px solid getMapColor(--white);
-        }
-    }
+    
 }
 .footer-contact-us{
     .contact-us{
@@ -252,7 +259,7 @@ main{
 }
 
 @media (max-width: 575px) {
-    .container-general-news, .container-items, .footer-contact-us{
+    .container-general-news, .container-text-subscribe, .container-items, .footer-contact-us{
         h2{
             margin: 0;
         }
@@ -263,7 +270,7 @@ main{
 }
 
 @media (min-width: 576px) {
-    .container-general-news, .container-items, .footer-contact-us{
+    .container-general-news, .container-text-subscribe, .container-items, .footer-contact-us{
         width: 540px !important;
         h2{
             margin: 0 0 0 20px;
@@ -275,7 +282,7 @@ main{
 }
 
 @media (min-width: 768px) {
-    .container-general-news, .container-items, .footer-contact-us{
+    .container-general-news, .container-text-subscribe, .container-items, .footer-contact-us{
         width: 640px !important;
         h2{
             margin: 0 0 0 20px;
@@ -285,7 +292,7 @@ main{
 }
 
 @media (min-width: 992px) {
-    .container-general-news, .container-items, .footer-contact-us{
+    .container-general-news, .container-text-subscribe, .container-items, .footer-contact-us{
         width: 980px !important;
         h2{
             margin: 0 0 0 20px;
@@ -293,7 +300,7 @@ main{
     }
 }
 @media (min-width: 990px) {
-    .container-general-news, .container-items, .footer-contact-us{
+    .container-general-news, .container-text-subscribe, .container-items, .footer-contact-us{
         width: 940px !important;
         h2{
             margin: 0 0 0 20px;
@@ -302,7 +309,7 @@ main{
 }
     
 @media (min-width: 1200px) {
-    .container-general-news, .container-items, .footer-contact-us, .container-form{
+    .container-general-news, .container-text-subscribe, .container-items, .footer-contact-us, .container-form{
         width: 940px;
         h2{
             margin: 0 0 0 20px;
