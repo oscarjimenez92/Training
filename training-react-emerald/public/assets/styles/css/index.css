@@ -65,6 +65,16 @@ main .eui-navbar-brand {
           cursor: pointer; }
   .container-general-news .eui-panel-body {
     padding: 40px 29px 29px 29px !important; }
+  .container-general-news .number-news-card {
+    position: absolute;
+    background: #000;
+    color: #fff;
+    padding: 0 8px;
+    font-weight: 700;
+    opacity: 0.5;
+    display: flex;
+    justify-content: center;
+    border-bottom-right-radius: 5px; }
   .container-general-news .container-img-card {
     height: 148px;
     width: 100%;

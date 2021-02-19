@@ -95,9 +95,6 @@ export default function App() {
       fetch(urlService)
         .then((response) => {
           if (response.status !== 200) {
-            console.log(
-              "Looks like there was a problem. Status Code: " + response.status
-            );
             window.location.reload();
             return;
           }
@@ -119,7 +116,7 @@ export default function App() {
           console.log("error ocurrido", err);
         });
     } catch (error) {
-      console.log("Error", error);
+      console.error("Error", error);
     }
   }, []);
 
@@ -127,7 +124,6 @@ export default function App() {
    * Hook responsible for listening to changes in the form at the foot of the page.
    */
   useEffect(() => {
-    console.log(dataForm);
     let percentage =
       (Object.values(dataForm).filter((val) => !!val).length * 100) /
       Object.keys(dataForm).length;
@@ -151,7 +147,6 @@ export default function App() {
    */
   const addClassActive = (elm) => {
     elm.stopPropagation();
-    console.log(elm);
     removeClassActive();
     window.location.href = elm.target.hash
     elm.currentTarget.classList.add("active");
@@ -331,6 +326,9 @@ export default function App() {
                           <div
                             className="container-img-card"
                           >
+                            <div className="number-news-card">
+                              <span>{`#${index+1}`}</span>
+                            </div>
                             <img
                               src={`${urlImages}${
                                 item.multimedia[
@@ -519,7 +517,6 @@ export default function App() {
                         : ""
                     }
                     label="Phonenumber"
-                    onMaxLengthReached={(e) => {console.log("no mas")}}
                     onChange={(e) => handleChange(e)}
                     name="phonenumber"
                     value={dataForm.phonenumber}

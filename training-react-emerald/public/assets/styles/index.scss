@@ -81,6 +81,17 @@ main{
     .eui-panel-body{
         padding: 40px 29px 29px 29px !important;
     }
+    .number-news-card{
+        position: absolute;
+        background: #000;
+        color: #fff;
+        padding: 0 8px;
+        font-weight: 700;
+        opacity: 0.5;
+        display: flex;
+        justify-content: center;
+        border-bottom-right-radius: 5px;
+    }
     .container-img-card{
         height: 148px;
         width: 100%;
@@ -92,8 +103,8 @@ main{
             object-fit: cover;
         }
         &:hover{
-            opacity: 0.8;
-        }
+            opacity: 0.8; 
+        } 
     }
     
 }
