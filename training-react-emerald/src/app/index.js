@@ -6,23 +6,8 @@ import React, { useState, useEffect } from "react";
 import {
   Container,
   Row,
-  Col,
-  // Nav,
-  // Navbar,
-  // DropdownButton,
-  // DropdownItem,
-  // Icon,
-  // Avatar,
-  // Alert,
-  Button,
   SkeletonLoader,
-  Toast,
-  CardGrid,
-  Card,
-  Panel,
-  TextField,
-  Modal,
-  Checkbox,
+  Toast
 } from "emerald-ui";
 import HeaderCondor from "../components/Navbar/Navbar"
 import AlertCondor from "../components/Alert/Alert"
@@ -125,7 +110,6 @@ export default function App() {
   }
 
   const viewMoreStories = (e) => {
-    console.log(e)
     if (countItemsPage < dataRequest.length) {
       setCountItemsPage((countItemsPage) => countItemsPage + 4);
     }
