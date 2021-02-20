@@ -36,7 +36,7 @@
     &:hover{
         background: getMapColor($background-color-hover);
         @if $color-text-hover{
-            color: getMapColor($color-text-hover)
+            color: getMapColor($color-text-hover);
         }
     }
 }

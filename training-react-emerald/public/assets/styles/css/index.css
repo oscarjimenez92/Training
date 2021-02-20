@@ -26,6 +26,8 @@ main .eui-navbar-brand {
   margin-top: 80px; }
   .container-general-news .eui-alert {
     flex-wrap: nowrap !important; }
+    .container-general-news .eui-alert p {
+      margin: 0; }
   .container-general-news .top-news {
     margin: 25px 0;
     padding: 0; }
@@ -127,7 +129,7 @@ main .eui-navbar-brand {
       margin-bottom: 40px;
       font-size: 17px;
       letter-spacing: -0.9px; }
-    .container-subscribe .items-subscribe .container-button-subscribe button {
+    .container-subscribe .items-subscribe .container-button-subscribe .buttonSubscribe {
       border: 1px solid #fff !important;
       border: none;
       font-size: 14px;
@@ -137,7 +139,7 @@ main .eui-navbar-brand {
       width: 163px;
       cursor: pointer;
       border-radius: 4px; }
-      .container-subscribe .items-subscribe .container-button-subscribe button:hover {
+      .container-subscribe .items-subscribe .container-button-subscribe .buttonSubscribe:hover {
         background: #fff;
         color: #000d26; }
 

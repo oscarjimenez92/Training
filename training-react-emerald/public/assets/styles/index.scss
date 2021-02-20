@@ -29,7 +29,10 @@ main{
     margin-top: 80px;
     .eui-alert{
         flex-wrap: nowrap !important;
-    }
+        p{
+            margin: 0;
+        }
+    } 
     .top-news{
         margin: 25px 0;
         padding: 0;
@@ -157,7 +160,7 @@ main{
             letter-spacing: -0.9px;
         }
         .container-button-subscribe{
-            button{
+            .buttonSubscribe{
                 border: 1px solid getMapColor(--white) !important;
                 @include button(--not-background, --white, --dark-blue-button, --white)
             }
