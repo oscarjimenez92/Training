@@ -6,7 +6,6 @@ import ButtonCondor from "../Button/Button";
 export default function ModalCondor({ showModal, dataShowModal, onHide }) {
     const [show, setShow] = useState(false)
     useEffect(() => {
-        console.log("entro", showModal)
         setShow(showModal)
         return () => {
             setShow(false)

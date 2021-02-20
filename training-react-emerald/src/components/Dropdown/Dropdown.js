@@ -18,7 +18,6 @@ function DropdownCondor({
    */
   useEffect(() => {
     setData(data);
-    console.log("Cargando datos");
     return () => {
       setData([]);
     };
