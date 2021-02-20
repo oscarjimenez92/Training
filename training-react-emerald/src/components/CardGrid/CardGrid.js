@@ -41,6 +41,7 @@ export default function GridCardsCondor({
       {dataRender.slice(currentItems, countItemsPage).map((item, index) => {
         return (
           <CardCondor
+            id={`target_${index+1}`}
             key={index}
             onClick={onClickCard}
             NumberIndex={`#${index + 1}`}

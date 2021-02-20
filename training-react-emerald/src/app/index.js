@@ -53,7 +53,6 @@ export default function App() {
    */
   const [dataRequest, setDataRequest] = useState([]);
   const [dataForm, setDataForm] = useState([]);
-
   /**
    * Flag for open and close the modal.
    */
@@ -117,7 +116,7 @@ export default function App() {
   const closeElement = (elm) => {
     elm.target.offsetParent.style.display = "none";
   };
-  
+
   /**
    * Open new on othe tab.
    */
