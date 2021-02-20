@@ -14,7 +14,7 @@ function FormCondor({ loading, onSubmit,  tabIndex}) {
     phonenumber: "",
     comments: "",
     sendEmail: false,
-  });
+  }); 
 
   /**
    * State for validate changes on the fields of form.
