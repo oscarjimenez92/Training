@@ -18,12 +18,13 @@ AlertCondor.propTypes = {
   textInfo: PropTypes.string.isRequired,
   onDismiss: PropTypes.func.isRequired,
   dismissible: PropTypes.bool.isRequired,
-  tabIndex: PropTypes.string.isRequired,
+  tabIndex: PropTypes.string
 };
 
 AlertCondor.defaultProps = {
   textInfo: "",
   onDismiss: "",
-  dismissible: "",
+  dismissible: true,
   tabIndex: "",
+  style: {}
 };

@@ -11,8 +11,9 @@ export default function LabelCondor({tag, className, text}) {
 }
 
 LabelCondor.propTypes = {
-    className: PropTypes.string.isRequired,
-    text: PropTypes.string.isRequired
+    text: PropTypes.string.isRequired,
+    tag: PropTypes.string,
+    className: PropTypes.string
 }
 
 LabelCondor.defaultProps = {

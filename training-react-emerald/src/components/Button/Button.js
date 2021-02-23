@@ -5,7 +5,7 @@ import { Button } from "emerald-ui/lib"
 export default function ButtonCondor({style, loading, progress, disabled, type, color, className, tabIndex, onClick, text}) {
 
     return (
-        <Button style={style} type={type} loading={loading} progress={progress} disabled={disabled} className={className} tabIndex={tabIndex} color={color} onClick={onClick}>
+        <Button data-testid="button" style={style} type={type} loading={loading} progress={progress} disabled={disabled} className={className} tabIndex={tabIndex} color={color} onClick={onClick}>
             {text}
         </Button>
     )
@@ -20,16 +20,19 @@ ButtonCondor.propTypes = {
     color: PropTypes.string, 
     className: PropTypes.string, 
     tabIndex: PropTypes.string, 
-    onClick: PropTypes.func
+    onClick: PropTypes.func,
+    style: PropTypes.object,
 } 
 
 ButtonCondor.defaultProps = {
     loading: false, 
     progress: 0, 
     disabled: false, 
+    text: "Button",
     type: "button", 
     color: "default", 
     className: "", 
+    style: {},
     tabIndex: "", 
     onClick: () => {}
 } 

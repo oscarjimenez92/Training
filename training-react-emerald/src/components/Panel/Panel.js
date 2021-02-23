@@ -45,9 +45,17 @@ function PanelCondor({
 
 PanelCondor.propTypes = {
   dataCards: PropTypes.array.isRequired,
+  currentItems: PropTypes.string,
+  countItemsPage: PropTypes.number,
+  onClickCard: PropTypes.func,
+  tabIndex: PropTypes.string
 };
 PanelCondor.defaultProps = {
   dataCards: [],
+  currentItems: "",
+  countItemsPage: 0,
+  onClickCard: () => {},
+  tabIndex: ""
 };
 
 export default PanelCondor;

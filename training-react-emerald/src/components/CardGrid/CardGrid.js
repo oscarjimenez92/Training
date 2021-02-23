@@ -9,7 +9,7 @@ export default function GridCardsCondor({
   onClickCard,
   dataCard,
   tabIndex,
-  className,
+  className
 }) {
   const urlImages = "https://static01.nyt.com/";
   const [dataRender, setDataRender] = useState([]);

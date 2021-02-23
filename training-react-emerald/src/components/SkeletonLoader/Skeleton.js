@@ -22,9 +22,16 @@ export default function SkeletonCondor({height, width, style, loading}) {
 }
 
 SkeletonCondor.propTypes = {
-    loading: PropTypes.bool.isRequired
+    loading: PropTypes.bool.isRequired,
+    height: PropTypes.string,
+    width: PropTypes.string,
+    style: PropTypes.object
 }
+
 SkeletonCondor.defaultProps = {
-    loading: true
+    loading: true,
+    height: "",
+    width: "",
+    style: {}
 }
 

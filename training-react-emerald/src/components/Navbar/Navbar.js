@@ -40,7 +40,7 @@ function HeaderCondor({countItemsPage, data, breakAt, barClassName, fixedAtTop, 
         <a href="/" tabIndex="5">
           <Avatar
             title="JS"
-            style={{ backgroundColor: "#9100AD", color: "#fff" }}
+            style={{backgroundColor: "#9100AD", color: "#fff"}}
           />
         </a>
       </Nav>
