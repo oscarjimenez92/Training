@@ -63,7 +63,7 @@ function DropdownCondor({
           <DropdownItem
             href={`#target_${index + 1}`}
             key={index + 1}
-            target="_self"
+            target='_self'
             onClick={(e) => {
               console.log(e);
               addClassActive(e);
@@ -71,7 +71,7 @@ function DropdownCondor({
             eventKey={index + 1}
           >
             {`Noticia#${index + 1}`}
-            <Icon aria-hidden name="assignment" className="pull-right" />
+            <Icon aria-hidden name='assignment' className='pull-right' />
           </DropdownItem>
         );
       })}
@@ -81,9 +81,9 @@ function DropdownCondor({
 
 DropdownCondor.propTypes = {
   toggleOnHover: PropTypes.bool.isRequired,
-  className: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
+  className: PropTypes.string,
+  title: PropTypes.string,
+  id: PropTypes.string,
 };
 
 DropdownCondor.defaultProps = {
