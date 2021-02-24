@@ -81,6 +81,7 @@ function DropdownCondor({
 
 DropdownCondor.propTypes = {
   toggleOnHover: PropTypes.bool.isRequired,
+  data: PropTypes.array.isRequired,
   className: PropTypes.string,
   title: PropTypes.string,
   id: PropTypes.string,
@@ -91,6 +92,7 @@ DropdownCondor.defaultProps = {
   className: "",
   title: "",
   id: "",
+  data: [],
 };
 
 export default DropdownCondor;
